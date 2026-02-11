@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2d6 Dice Roller | Roll 2 6-Sided Dice Online</title>
+    <meta name="description" content="Roll 2d6 online with QuickDice. Instant 2 dice with 6 sides roller - free, random, and fair. No app needed." />
+    <link rel="icon" type="image/png" href="../../assets/favicon.png" />
+    <link rel="apple-touch-icon" href="../../assets/webclip.png" />
+    <meta property="og:title" content="2d6 Dice Roller | Roll 2 6-Sided Dice Online" />
+    <meta property="og:description" content="Roll 2d6 online with QuickDice. Instant 2 dice with 6 sides roller - free, random, and fair. No app needed." />
+    <meta property="og:image" content="https://quickdice.co/assets/og-image.png" />
+    <meta property="og:url" content="https://quickdice.co/2-dice/6-sides/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="QuickDice" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="2d6 Dice Roller | Roll 2 6-Sided Dice Online" />
+    <meta name="twitter:description" content="Roll 2d6 online with QuickDice. Instant 2 dice with 6 sides roller - free, random, and fair. No app needed." />
+    <meta name="twitter:image" content="https://quickdice.co/assets/og-image.png" />
+    <link rel="canonical" href="https://quickdice.co/2-dice/6-sides/" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Figtree:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-page-dice="2" data-page-sides="6">
+    <nav class="nav">
+      <a href="/" class="nav-logo">
+        <img src="../../assets/dice-logomark.svg" alt="" class="nav-logo-icon" width="48" height="48" />
+        <span class="nav-logo-text">QuickDice</span>
+      </a>
+    </nav>
+
+    <div class="app">
+      <header class="header">
+        <h1 class="title">Roll 2d6 Online</h1>
+        <p class="subtitle">
+          Roll 2 dice with 6 sides (2d6)
+        </p>
+      </header>
+
+      <div class="controls-card">
+        <div class="control-group">
+          <label for="num-dice" class="control-label">Number of dice</label>
+          <select id="num-dice" class="control-select">
+            <option value="/">1 die</option>
+            <option value="/2-dice/6-sides/" selected>2 dice</option>
+            <option value="/3-dice/6-sides/">3 dice</option>
+            <option value="/4-dice/6-sides/">4 dice</option>
+            <option value="/5-dice/6-sides/">5 dice</option>
+            <option value="/6-dice/6-sides/">6 dice</option>
+          </select>
+        </div>
+        <div class="control-divider"></div>
+        <div class="control-group">
+          <label for="num-sides" class="control-label">Number of sides</label>
+          <select id="num-sides" class="control-select">
+            <option value="/2-dice/2-sides/">2 sides</option>
+            <option value="/2-dice/3-sides/">3 sides</option>
+            <option value="/2-dice/4-sides/">4 sides</option>
+            <option value="/2-dice/5-sides/">5 sides</option>
+            <option value="/2-dice/6-sides/" selected>6 sides</option>
+            <option value="/2-dice/7-sides/">7 sides</option>
+            <option value="/2-dice/8-sides/">8 sides</option>
+            <option value="/2-dice/9-sides/">9 sides</option>
+            <option value="/2-dice/10-sides/">10 sides</option>
+            <option value="/2-dice/12-sides/">12 sides</option>
+            <option value="/2-dice/20-sides/">20 sides</option>
+            <option value="/2-dice/100-sides/">100 sides</option>
+          </select>
+        </div>
+        <button class="modifier-btn" id="modifier-btn" type="button" aria-label="Set roll modifier">+/&minus;</button>
+      </div>
+
+      <div class="dice-area" id="dice-area"></div>
+
+      <div class="result-container" id="result-container">
+        <p class="roll-prompt" id="roll-prompt">
+          Hit roll to test your luck! 👇️
+        </p>
+        <div class="result-display" id="result-display">
+          <span class="result-label">Total</span>
+          <span class="result-value" id="result-value">-</span>
+        </div>
+      </div>
+
+      <button class="roll-btn" id="roll-btn">
+        <span class="roll-btn-text">Roll</span>
+        <svg
+          class="roll-btn-icon"
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="2" y="2" width="20" height="20" rx="4" />
+          <circle cx="8" cy="8" r="1.5" fill="currentColor" stroke="none" />
+          <circle cx="16" cy="8" r="1.5" fill="currentColor" stroke="none" />
+          <circle cx="8" cy="16" r="1.5" fill="currentColor" stroke="none" />
+          <circle cx="16" cy="16" r="1.5" fill="currentColor" stroke="none" />
+        </svg>
+      </button>
+      <p class="roll-hint">or press spacebar</p>
+    </div>
+
+    <section class="roll-history-section" id="roll-history"></section>
+
+    <main class="content">
+      <section class="content-section">
+        <h2 class="content-heading">2d6 Probability Breakdown</h2>
+        <p>Rolling two six-sided dice produces a total between 2 and 12, but not all totals are equally likely. The results follow a bell curve, with 7 being the most common outcome and the extremes (2 and 12) being the rarest.</p>
+        <table class="content-table">
+          <thead>
+            <tr>
+              <th>Total</th>
+              <th>Combinations</th>
+              <th>Probability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>2</td><td>1 (1+1)</td><td>2.78%</td></tr>
+            <tr><td>3</td><td>2 (1+2, 2+1)</td><td>5.56%</td></tr>
+            <tr><td>4</td><td>3 (1+3, 2+2, 3+1)</td><td>8.33%</td></tr>
+            <tr><td>5</td><td>4 (1+4, 2+3, 3+2, 4+1)</td><td>11.11%</td></tr>
+            <tr><td>6</td><td>5 (1+5, 2+4, 3+3, 4+2, 5+1)</td><td>13.89%</td></tr>
+            <tr><td>7</td><td>6 (1+6, 2+5, 3+4, 4+3, 5+2, 6+1)</td><td>16.67%</td></tr>
+            <tr><td>8</td><td>5 (2+6, 3+5, 4+4, 5+3, 6+2)</td><td>13.89%</td></tr>
+            <tr><td>9</td><td>4 (3+6, 4+5, 5+4, 6+3)</td><td>11.11%</td></tr>
+            <tr><td>10</td><td>3 (4+6, 5+5, 6+4)</td><td>8.33%</td></tr>
+            <tr><td>11</td><td>2 (5+6, 6+5)</td><td>5.56%</td></tr>
+            <tr><td>12</td><td>1 (6+6)</td><td>2.78%</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="content-section">
+        <h2 class="content-heading">Games That Use 2d6</h2>
+        <p>Two six-sided dice are the most widely used dice combination in tabletop gaming. Here are some of the most popular games that rely on a 2d6 roll.</p>
+        <ul class="content-list">
+          <li><strong>Monopoly</strong> - Players roll 2d6 each turn to move around the board. Rolling doubles lets you take another turn, but three doubles in a row sends you straight to jail.</li>
+          <li><strong>Catan</strong> - A 2d6 roll each turn determines which hexes produce resources. Since 7 is the most common result, it triggers the robber, making tiles numbered 6 and 8 the most valuable spots on the board.</li>
+          <li><strong>Craps</strong> - The classic casino dice game is built entirely around 2d6 probability. Players bet on outcomes like 7 or 11 on the come-out roll, or try to avoid "crapping out" with a 2, 3, or 12.</li>
+          <li><strong>Backgammon</strong> - Players roll 2d6 to determine how far their checkers move. Rolling doubles counts twice, giving you four moves instead of two.</li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2 class="content-heading">2d6 vs 1d12: What's the Difference?</h2>
+        <p>A single twelve-sided die (1d12) and two six-sided dice (2d6) both cover a similar range, but they behave very differently. With 1d12, every number from 1 to 12 has an equal 8.3% chance of appearing. With 2d6, the results range from 2 to 12 and follow a bell curve where middle values like 6, 7, and 8 come up far more often than the extremes.</p>
+        <p>This is why game designers choose 2d6 when they want outcomes to cluster around an average, and 1d12 when they want a flat, unpredictable spread.</p>
+      </section>
+    </main>
+    <section class="popular-rolls">
+      <h2 class="popular-rolls-heading">Other Popular Rolls</h2>
+      <div class="popular-rolls-grid">
+          <a href="/2-dice/4-sides/">2d4 Dice Roller</a>
+          <a href="/2-dice/8-sides/">2d8 Dice Roller</a>
+          <a href="/2-dice/10-sides/">2d10 Dice Roller</a>
+          <a href="/2-dice/12-sides/">2d12 Dice Roller</a>
+          <a href="/2-dice/20-sides/">2d20 Dice Roller</a>
+          <a href="/2-dice/2-sides/">2d2 Dice Roller</a>
+          <a href="/2-dice/3-sides/">2d3 Dice Roller</a>
+          <a href="/2-dice/5-sides/">2d5 Dice Roller</a>
+          <a href="/2-dice/7-sides/">2d7 Dice Roller</a>
+          <a href="/2-dice/9-sides/">2d9 Dice Roller</a>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 QuickDice</p>
+    </footer>
+
+    <div class="modifier-overlay" id="modifier-overlay">
+      <div class="modifier-modal">
+        <p class="modifier-modal-title">Add modifier</p>
+        <div class="modifier-stepper">
+          <button class="modifier-stepper-btn" id="modifier-dec" type="button" aria-label="Decrease modifier">&minus;</button>
+          <input class="modifier-stepper-input" id="modifier-input" type="number" value="0" aria-label="Modifier value" />
+          <button class="modifier-stepper-btn" id="modifier-inc" type="button" aria-label="Increase modifier">+</button>
+        </div>
+        <button class="modifier-apply-btn" id="modifier-apply" type="button">Apply</button>
+      </div>
+    </div>
+
+    <script src="../../script.js"></script>
+  </body>
+</html>

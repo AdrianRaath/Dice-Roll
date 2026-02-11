@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roll Dice Online - Free Virtual Dice Roller | QuickDice</title>
+    <meta name="description" content="Free online dice roller with d4, d6, d8, d10, d12, d20, and d100 support. Roll up to 6 dice, add modifiers, and track results with roll history. Perfect for D&amp;D, board games, and tabletop RPGs." />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/webclip.png" />
+    <meta property="og:title" content="Roll Dice Online - Free Virtual Dice Roller | QuickDice" />
+    <meta property="og:description" content="Free online dice roller with d4, d6, d8, d10, d12, d20, and d100 support. Roll up to 6 dice, add modifiers, and track results with roll history. Perfect for D&amp;D, board games, and tabletop RPGs." />
+    <meta property="og:image" content="https://quickdice.co/assets/og-image.png" />
+    <meta property="og:url" content="https://quickdice.co/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="QuickDice" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Roll Dice Online - Free Virtual Dice Roller | QuickDice" />
+    <meta name="twitter:description" content="Free online dice roller with d4, d6, d8, d10, d12, d20, and d100 support. Roll up to 6 dice, add modifiers, and track results with roll history. Perfect for D&amp;D, board games, and tabletop RPGs." />
+    <meta name="twitter:image" content="https://quickdice.co/assets/og-image.png" />
+    <link rel="canonical" href="https://quickdice.co/" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Figtree:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-page-dice="1" data-page-sides="6">
+    <nav class="nav">
+      <a href="/" class="nav-logo">
+        <img src="assets/dice-logomark.svg" alt="" class="nav-logo-icon" width="48" height="48" />
+        <span class="nav-logo-text">QuickDice</span>
+      </a>
+    </nav>
+
+    <div class="app">
+      <header class="header">
+        <h1 class="title">Roll Dice Online</h1>
+        <p class="subtitle">
+          Pick your dice 🎲, choose your sides, and let fate decide
+        </p>
+      </header>
+
+      <div class="controls-card">
+        <div class="control-group">
+          <label for="num-dice" class="control-label">Number of dice</label>
+          <select id="num-dice" class="control-select">
+            <option value="/" selected>1 die</option>
+            <option value="/2-dice/6-sides/">2 dice</option>
+            <option value="/3-dice/6-sides/">3 dice</option>
+            <option value="/4-dice/6-sides/">4 dice</option>
+            <option value="/5-dice/6-sides/">5 dice</option>
+            <option value="/6-dice/6-sides/">6 dice</option>
+          </select>
+        </div>
+        <div class="control-divider"></div>
+        <div class="control-group">
+          <label for="num-sides" class="control-label">Number of sides</label>
+          <select id="num-sides" class="control-select">
+            <option value="/1-dice/2-sides/">2 sides</option>
+            <option value="/1-dice/3-sides/">3 sides</option>
+            <option value="/1-dice/4-sides/">4 sides</option>
+            <option value="/1-dice/5-sides/">5 sides</option>
+            <option value="/" selected>6 sides</option>
+            <option value="/1-dice/7-sides/">7 sides</option>
+            <option value="/1-dice/8-sides/">8 sides</option>
+            <option value="/1-dice/9-sides/">9 sides</option>
+            <option value="/1-dice/10-sides/">10 sides</option>
+            <option value="/1-dice/12-sides/">12 sides</option>
+            <option value="/1-dice/20-sides/">20 sides</option>
+            <option value="/1-dice/100-sides/">100 sides</option>
+          </select>
+        </div>
+        <button class="modifier-btn" id="modifier-btn" type="button" aria-label="Set roll modifier">+/&minus;</button>
+      </div>
+
+      <div class="dice-area" id="dice-area"></div>
+
+      <div class="result-container" id="result-container">
+        <p class="roll-prompt" id="roll-prompt">
+          Hit roll to test your luck! 👇️
+        </p>
+        <div class="result-display" id="result-display">
+          <span class="result-label">Total</span>
+          <span class="result-value" id="result-value">-</span>
+        </div>
+      </div>
+
+      <button class="roll-btn" id="roll-btn">
+        <span class="roll-btn-text">Roll</span>
+        <svg
+          class="roll-btn-icon"
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="2" y="2" width="20" height="20" rx="4" />
+          <circle cx="8" cy="8" r="1.5" fill="currentColor" stroke="none" />
+          <circle cx="16" cy="8" r="1.5" fill="currentColor" stroke="none" />
+          <circle cx="8" cy="16" r="1.5" fill="currentColor" stroke="none" />
+          <circle cx="16" cy="16" r="1.5" fill="currentColor" stroke="none" />
+        </svg>
+      </button>
+      <p class="roll-hint">or press spacebar</p>
+    </div>
+
+    <section class="roll-history-section" id="roll-history"></section>
+
+    <main class="content">
+      <section class="content-section">
+        <h2 class="content-heading">Roll the Dice Online</h2>
+        <p>QuickDice is a free online dice roller that lets you roll virtual dice instantly in your browser. Roll up to 6 dice at once with support for all standard polyhedral dice - d4, d6, d8, d10, d12, d20, and d100. No apps to download, no sign-ups required - just pick your dice, choose your sides, and roll.</p>
+        <p>Every roll uses cryptographically secure randomness to ensure completely unbiased results. Each die face has an equal probability of landing, just like rolling physical dice. Add positive or negative modifiers to any roll, track your results with built-in roll history, and roll again instantly with the spacebar.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 class="content-heading">How to Use Our Online Dice Roller</h2>
+        <ol class="content-list content-list--ordered">
+          <li><strong>Choose the number of dice</strong> - Select anywhere from 1 to 6 dice using the dropdown. Whether you need a single die roll or a handful of dice, we have you covered.</li>
+          <li><strong>Set the number of sides</strong> - Choose from d2 through d100. Classic board games use 6-sided dice (d6), while tabletop RPGs call for d4, d8, d10, d12, and d20.</li>
+          <li><strong>Add a modifier (optional)</strong> - Click the +/- button to add a positive or negative modifier to your roll. Perfect for D&amp;D attack rolls, skill checks, and saving throws where you need to add a bonus.</li>
+          <li><strong>Hit Roll or press spacebar</strong> - Watch the dice tumble with a quick rolling animation. Each die lands independently with a completely random result, and the total appears instantly.</li>
+        </ol>
+        <p>Every roll is recorded in the roll history below, showing individual dice values, modifiers, and totals. You can re-roll as many times as you like and change your dice configuration at any time. QuickDice works on desktop, tablet, and mobile.</p>
+      </section>
+
+      <section class="content-section">
+        <h2 class="content-heading">Popular Use Cases</h2>
+        <ul class="content-list">
+          <li><strong>Board games and party games</strong> - Don't have physical dice handy? Use QuickDice as a replacement when playing Monopoly, Risk, Yahtzee, Catan, or any board game that requires dice. Our virtual dice roller is perfect for game nights when dice go missing.</li>
+          <li><strong>Tabletop RPGs and D&amp;D</strong> - Roll any standard polyhedral die from d4 to d100, add modifiers for attack rolls and skill checks, and track every result with roll history. QuickDice covers the full range of dice used in Dungeons &amp; Dragons, Pathfinder, and other tabletop RPGs.</li>
+          <li><strong>Classroom activities and teaching</strong> - Teachers use online dice for probability lessons, maths games, and random student selection. A virtual dice roller is a simple, visual way to demonstrate chance and statistics to students of all ages.</li>
+          <li><strong>Decision-making</strong> - Can't decide what to have for dinner or who goes first? Let the dice decide. Rolling dice online is a quick, fun, and impartial way to settle everyday choices and break ties.</li>
+          <li><strong>Drinking games and icebreakers</strong> - Hosting a get-together? Pull up QuickDice on your phone and use it for any dice-based drinking game or party icebreaker - no physical set needed.</li>
+        </ul>
+      </section>
+    </main>
+
+    <section class="popular-rolls">
+      <h2 class="popular-rolls-heading">Popular Dice Rollers</h2>
+      <div class="popular-rolls-grid">
+          <a href="/1-dice/4-sides/">1d4 Dice Roller</a>
+          <a href="/1-dice/8-sides/">1d8 Dice Roller</a>
+          <a href="/1-dice/10-sides/">1d10 Dice Roller</a>
+          <a href="/1-dice/12-sides/">1d12 Dice Roller</a>
+          <a href="/1-dice/20-sides/">1d20 Dice Roller</a>
+          <a href="/1-dice/100-sides/">1d100 Dice Roller</a>
+          <a href="/2-dice/6-sides/">2d6 Dice Roller</a>
+          <a href="/3-dice/6-sides/">3d6 Dice Roller</a>
+          <a href="/4-dice/6-sides/">4d6 Dice Roller</a>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 QuickDice</p>
+    </footer>
+
+    <div class="modifier-overlay" id="modifier-overlay">
+      <div class="modifier-modal">
+        <p class="modifier-modal-title">Add modifier</p>
+        <div class="modifier-stepper">
+          <button class="modifier-stepper-btn" id="modifier-dec" type="button" aria-label="Decrease modifier">&minus;</button>
+          <input class="modifier-stepper-input" id="modifier-input" type="number" value="0" aria-label="Modifier value" />
+          <button class="modifier-stepper-btn" id="modifier-inc" type="button" aria-label="Increase modifier">+</button>
+        </div>
+        <button class="modifier-apply-btn" id="modifier-apply" type="button">Apply</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

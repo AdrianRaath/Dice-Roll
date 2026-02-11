@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6d6 Dice Roller | Roll 6 6-Sided Dice Online</title>
+    <meta name="description" content="Roll 6d6 online with QuickDice. Instant 6 dice with 6 sides roller - free, random, and fair. No app needed." />
+    <link rel="icon" type="image/png" href="../../assets/favicon.png" />
+    <link rel="apple-touch-icon" href="../../assets/webclip.png" />
+    <meta property="og:title" content="6d6 Dice Roller | Roll 6 6-Sided Dice Online" />
+    <meta property="og:description" content="Roll 6d6 online with QuickDice. Instant 6 dice with 6 sides roller - free, random, and fair. No app needed." />
+    <meta property="og:image" content="https://quickdice.co/assets/og-image.png" />
+    <meta property="og:url" content="https://quickdice.co/6-dice/6-sides/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="QuickDice" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="6d6 Dice Roller | Roll 6 6-Sided Dice Online" />
+    <meta name="twitter:description" content="Roll 6d6 online with QuickDice. Instant 6 dice with 6 sides roller - free, random, and fair. No app needed." />
+    <meta name="twitter:image" content="https://quickdice.co/assets/og-image.png" />
+    <link rel="canonical" href="https://quickdice.co/6-dice/6-sides/" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Figtree:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-page-dice="6" data-page-sides="6">
+    <nav class="nav">
+      <a href="/" class="nav-logo">
+        <img src="../../assets/dice-logomark.svg" alt="" class="nav-logo-icon" width="48" height="48" />
+        <span class="nav-logo-text">QuickDice</span>
+      </a>
+    </nav>
+
+    <div class="app">
+      <header class="header">
+        <h1 class="title">Roll 6d6 Online</h1>
+        <p class="subtitle">
+          Roll 6 dice with 6 sides (6d6)
+        </p>
+      </header>
+
+      <div class="controls-card">
+        <div class="control-group">
+          <label for="num-dice" class="control-label">Number of dice</label>
+          <select id="num-dice" class="control-select">
+            <option value="/">1 die</option>
+            <option value="/2-dice/6-sides/">2 dice</option>
+            <option value="/3-dice/6-sides/">3 dice</option>
+            <option value="/4-dice/6-sides/">4 dice</option>
+            <option value="/5-dice/6-sides/">5 dice</option>
+            <option value="/6-dice/6-sides/" selected>6 dice</option>
+          </select>
+        </div>
+        <div class="control-divider"></div>
+        <div class="control-group">
+          <label for="num-sides" class="control-label">Number of sides</label>
+          <select id="num-sides" class="control-select">
+            <option value="/6-dice/2-sides/">2 sides</option>
+            <option value="/6-dice/3-sides/">3 sides</option>
+            <option value="/6-dice/4-sides/">4 sides</option>
+            <option value="/6-dice/5-sides/">5 sides</option>
+            <option value="/6-dice/6-sides/" selected>6 sides</option>
+            <option value="/6-dice/7-sides/">7 sides</option>
+            <option value="/6-dice/8-sides/">8 sides</option>
+            <option value="/6-dice/9-sides/">9 sides</option>
+            <option value="/6-dice/10-sides/">10 sides</option>
+            <option value="/6-dice/12-sides/">12 sides</option>
+            <option value="/6-dice/20-sides/">20 sides</option>
+            <option value="/6-dice/100-sides/">100 sides</option>
+          </select>
+        </div>
+        <button class="modifier-btn" id="modifier-btn" type="button" aria-label="Set roll modifier">+/&minus;</button>
+      </div>
+
+      <div class="dice-area" id="dice-area"></div>
+
+      <div class="result-container" id="result-container">
+        <p class="roll-prompt" id="roll-prompt">
+          Hit roll to test your luck! 👇️
+        </p>
+        <div class="result-display" id="result-display">
+          <span class="result-label">Total</span>
+          <span class="result-value" id="result-value">-</span>
+        </div>
+      </div>
+
+      <button class="roll-btn" id="roll-btn">
+        <span class="roll-btn-text">Roll</span>
+        <svg
+          class="roll-btn-icon"
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="2" y="2" width="20" height="20" rx="4" />
+          <circle cx="8" cy="8" r="1.5" fill="currentColor" stroke="none" />
+          <circle cx="16" cy="8" r="1.5" fill="currentColor" stroke="none" />
+          <circle cx="8" cy="16" r="1.5" fill="currentColor" stroke="none" />
+          <circle cx="16" cy="16" r="1.5" fill="currentColor" stroke="none" />
+        </svg>
+      </button>
+      <p class="roll-hint">or press spacebar</p>
+    </div>
+
+    <section class="roll-history-section" id="roll-history"></section>
+
+    <section class="popular-rolls">
+      <h2 class="popular-rolls-heading">Other Popular Rolls</h2>
+      <div class="popular-rolls-grid">
+          <a href="/6-dice/4-sides/">6d4 Dice Roller</a>
+          <a href="/6-dice/8-sides/">6d8 Dice Roller</a>
+          <a href="/6-dice/10-sides/">6d10 Dice Roller</a>
+          <a href="/6-dice/12-sides/">6d12 Dice Roller</a>
+          <a href="/6-dice/20-sides/">6d20 Dice Roller</a>
+          <a href="/6-dice/2-sides/">6d2 Dice Roller</a>
+          <a href="/6-dice/3-sides/">6d3 Dice Roller</a>
+          <a href="/6-dice/5-sides/">6d5 Dice Roller</a>
+          <a href="/6-dice/7-sides/">6d7 Dice Roller</a>
+          <a href="/6-dice/9-sides/">6d9 Dice Roller</a>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 QuickDice</p>
+    </footer>
+
+    <div class="modifier-overlay" id="modifier-overlay">
+      <div class="modifier-modal">
+        <p class="modifier-modal-title">Add modifier</p>
+        <div class="modifier-stepper">
+          <button class="modifier-stepper-btn" id="modifier-dec" type="button" aria-label="Decrease modifier">&minus;</button>
+          <input class="modifier-stepper-input" id="modifier-input" type="number" value="0" aria-label="Modifier value" />
+          <button class="modifier-stepper-btn" id="modifier-inc" type="button" aria-label="Increase modifier">+</button>
+        </div>
+        <button class="modifier-apply-btn" id="modifier-apply" type="button">Apply</button>
+      </div>
+    </div>
+
+    <script src="../../script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1037 @@
+/* ==========================================================================
+   CSS Custom Properties (Design Tokens)
+   ========================================================================== */
+
+:root {
+  /* --- Colors --- */
+  --color-bg:             #f8f6f1;
+  --color-surface:        #ffffff;
+  --color-surface-alt:    #f1efe9;
+  --color-border:         #e2dfd6;
+  --color-border-hover:   #ccc8bc;
+
+  --color-text-primary:   #1a1a2e;
+  --color-text-secondary: #6b6b80;
+  --color-text-muted:     #9a9aad;
+
+  --color-accent:         #2d6a4f;
+  --color-accent-hover:   #1b4332;
+  --color-accent-light:   #e6f0eb;
+
+  --color-dice-bg:        #ffffff;
+  --color-dice-border:    #e2dfd6;
+  --color-dice-dot:       #1a1a2e;
+  --color-dice-number:    #1a1a2e;
+
+  --color-result-bg:      #e6f0eb;
+  --color-result-text:    #2d6a4f;
+
+  /* --- Typography --- */
+  --font-heading:         'Figtree', 'Inter', system-ui, sans-serif;
+  --font-body:            'Inter', system-ui, sans-serif;
+
+  --text-xs:              0.75rem;
+  --text-sm:              0.875rem;
+  --text-base:            1rem;
+  --text-lg:              1.125rem;
+  --text-xl:              1.25rem;
+  --text-2xl:             1.5rem;
+  --text-3xl:             2rem;
+  --text-4xl:             2.5rem;
+
+  --weight-normal:        400;
+  --weight-medium:        500;
+  --weight-semi:          600;
+  --weight-bold:          700;
+
+  --leading-tight:        1.2;
+  --leading-normal:       1.5;
+
+  /* --- Spacing --- */
+  --space-1:              0.25rem;
+  --space-2:              0.5rem;
+  --space-3:              0.75rem;
+  --space-4:              1rem;
+  --space-5:              1.25rem;
+  --space-6:              1.5rem;
+  --space-8:              2rem;
+  --space-10:             2.5rem;
+  --space-12:             3rem;
+  --space-16:             4rem;
+
+  /* --- Border Radius --- */
+  --radius-sm:            0.5rem;
+  --radius-md:            0.75rem;
+  --radius-lg:            1rem;
+  --radius-xl:            1.25rem;
+  --radius-2xl:           1.5rem;
+  --radius-full:          9999px;
+
+  /* --- Shadows --- */
+  --shadow-sm:            0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md:            0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-lg:            0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-xl:            0 8px 32px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  /* --- Transitions --- */
+  --transition-fast:      150ms ease;
+  --transition-base:      250ms ease;
+  --transition-slow:      400ms ease;
+
+  /* --- Dice sizes --- */
+  --dice-size:            140px;
+  --dice-dot-size:        22px;
+  --dice-gap:             var(--space-4);
+}
+
+
+/* ==========================================================================
+   Reset & Base
+   ========================================================================== */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-normal);
+  line-height: var(--leading-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: var(--space-5) var(--space-6);
+}
+
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+}
+
+.nav-logo-icon {
+  display: block;
+}
+
+.nav-logo-text {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+
+/* ==========================================================================
+   App Container
+   ========================================================================== */
+
+.app {
+  width: 100%;
+  max-width: 640px;
+  padding: var(--space-16) var(--space-6) var(--space-10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.header {
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  margin-top: var(--space-3);
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  font-weight: var(--weight-normal);
+}
+
+
+/* ==========================================================================
+   Controls Card
+   ========================================================================== */
+
+.controls-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.control-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.control-label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semi);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.control-select {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semi);
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-text-primary);
+  border-radius: var(--radius-md);
+  height: 48px;
+  padding: 0 var(--space-8) 0 var(--space-3);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%231a1a2e' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.control-select:hover {
+  border-color: var(--color-border-hover);
+}
+
+.control-select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-light);
+}
+
+.control-divider {
+  display: none;
+}
+
+
+/* ==========================================================================
+   Modifier Button
+   ========================================================================== */
+
+.modifier-btn {
+  flex-shrink: 0;
+  align-self: flex-end;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semi);
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-text-primary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
+  padding: 0;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.modifier-btn:hover {
+  background: var(--color-surface-alt);
+}
+
+.modifier-btn--active {
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  border-color: var(--color-text-primary);
+  min-width: 40px;
+}
+
+
+/* ==========================================================================
+   Modifier Modal
+   ========================================================================== */
+
+.modifier-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modifier-overlay--visible {
+  display: flex;
+}
+
+.modifier-modal {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  padding: var(--space-6);
+  width: 280px;
+  max-width: calc(100vw - 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  animation: resultFadeIn var(--transition-base) ease forwards;
+}
+
+.modifier-modal-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.modifier-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.modifier-stepper-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+  user-select: none;
+  line-height: 1;
+}
+
+.modifier-stepper-btn:hover {
+  border-color: var(--color-border-hover);
+  background: var(--color-border);
+}
+
+.modifier-stepper-input {
+  width: 72px;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.modifier-stepper-input::-webkit-outer-spin-button,
+.modifier-stepper-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.modifier-stepper-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-light);
+}
+
+.modifier-apply-btn {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semi);
+  color: #ffffff;
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-full);
+  padding: var(--space-3) var(--space-6);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.modifier-apply-btn:hover {
+  background: var(--color-accent-hover);
+}
+
+
+/* ==========================================================================
+   Dice Area
+   ========================================================================== */
+
+.dice-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--dice-gap);
+  min-height: var(--dice-size);
+  align-items: center;
+  margin-top: var(--space-4);
+}
+
+
+/* ==========================================================================
+   Individual Die
+   ========================================================================== */
+
+.die {
+  width: var(--dice-size);
+  height: var(--dice-size);
+  background: var(--color-dice-bg);
+  border: 1px solid var(--color-text-primary);
+  border-radius: var(--radius-lg);
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: var(--space-3);
+  position: relative;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.die--number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.die-number-text {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-dice-number);
+  line-height: 1;
+  user-select: none;
+}
+
+/* --- Dot --- */
+
+.die-dot {
+  width: var(--dice-dot-size);
+  height: var(--dice-dot-size);
+  background-color: var(--color-dice-dot);
+  border-radius: var(--radius-full);
+  align-self: center;
+  justify-self: center;
+}
+
+/* Dot positioning using grid areas (row / col) */
+
+/* Center dot (used in 1, 3, 5) */
+.die-dot--center       { grid-row: 2; grid-column: 2; }
+
+/* Top-left & bottom-right (used in 2, 3, 4, 5, 6) */
+.die-dot--top-left     { grid-row: 1; grid-column: 1; }
+.die-dot--bottom-right { grid-row: 3; grid-column: 3; }
+
+/* Top-right & bottom-left (used in 4, 5, 6) */
+.die-dot--top-right    { grid-row: 1; grid-column: 3; }
+.die-dot--bottom-left  { grid-row: 3; grid-column: 1; }
+
+/* Middle-left & middle-right (used in 6) */
+.die-dot--mid-left     { grid-row: 2; grid-column: 1; }
+.die-dot--mid-right    { grid-row: 2; grid-column: 3; }
+
+
+/* ==========================================================================
+   Rolling Animation
+   ========================================================================== */
+
+.die--rolling {
+  animation: diceRoll 0.6s ease-in-out;
+}
+
+@keyframes diceRoll {
+  0%   { transform: rotate(0deg) scale(1); }
+  15%  { transform: rotate(15deg) scale(0.92); }
+  30%  { transform: rotate(-12deg) scale(1.04); }
+  45%  { transform: rotate(10deg) scale(0.96); }
+  60%  { transform: rotate(-8deg) scale(1.02); }
+  75%  { transform: rotate(4deg) scale(0.98); }
+  90%  { transform: rotate(-2deg) scale(1.01); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+/* Randomize animation appearance per die */
+.die--rolling:nth-child(2) { animation-delay: 50ms; }
+.die--rolling:nth-child(3) { animation-delay: 100ms; }
+.die--rolling:nth-child(4) { animation-delay: 60ms; }
+.die--rolling:nth-child(5) { animation-delay: 120ms; }
+.die--rolling:nth-child(6) { animation-delay: 80ms; }
+
+/* Landing pop for final result */
+.die--landed {
+  animation: dieLand 0.3s ease-out;
+}
+
+@keyframes dieLand {
+  0%   { transform: scale(0.9); opacity: 0.7; }
+  60%  { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+/* ==========================================================================
+   Result Container (prompt + result share the same slot)
+   ========================================================================== */
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 3rem;
+}
+
+.roll-prompt {
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.roll-prompt--hidden {
+  display: none;
+}
+
+.result-display {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  animation: resultFadeIn var(--transition-base) ease forwards;
+}
+
+.result-display--visible {
+  display: flex;
+}
+
+/* Equation result (3 + 2 = 5) */
+.result-display--multi {
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.result-equation {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-heading);
+  line-height: var(--leading-tight);
+}
+
+.result-equation-part {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semi);
+  color: var(--color-text-secondary);
+}
+
+.result-equation-equals {
+  color: var(--color-text-muted);
+  font-weight: var(--weight-normal);
+  padding: 0 var(--space-1);
+}
+
+.result-equation-total {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-text-primary);
+  padding: var(--space-1) var(--space-6);
+  border-radius: var(--radius-full);
+  line-height: var(--leading-tight);
+  min-width: 80px;
+  text-align: center;
+}
+
+@keyframes resultFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.result-label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semi);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.result-value {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-text-primary);
+  padding: var(--space-1) var(--space-6);
+  border-radius: var(--radius-full);
+  line-height: var(--leading-tight);
+  min-width: 80px;
+  text-align: center;
+  transition: opacity var(--transition-fast);
+}
+
+.result-value--shuffling {
+  opacity: 0.4;
+}
+
+
+/* ==========================================================================
+   Roll Button
+   ========================================================================== */
+
+.roll-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semi);
+  color: #ffffff;
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-full);
+  padding: var(--space-4) var(--space-10);
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  user-select: none;
+}
+
+.roll-btn:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-xl);
+}
+
+.roll-btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-md);
+}
+
+.roll-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.roll-btn-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.roll-hint {
+  display: none;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+@media (hover: hover) {
+  .roll-hint {
+    display: block;
+  }
+}
+
+
+/* ==========================================================================
+   Roll History
+   ========================================================================== */
+
+.roll-history-section {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.roll-history-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.roll-history-heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+}
+
+.roll-history-clear {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semi);
+  color: #ffffff;
+  background: #d94040;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  transition: background var(--transition-fast);
+}
+
+.roll-history-clear:hover {
+  background: #b83232;
+}
+
+.roll-history-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.roll-history-header {
+  display: flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-text-primary);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semi);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.roll-history-row {
+  display: flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.roll-history-row:last-child {
+  border-bottom: none;
+}
+
+.roll-history-row--latest {
+  color: var(--color-text-primary);
+  font-weight: var(--weight-medium);
+}
+
+.roll-history-col-no,
+.roll-history-col-roll,
+.roll-history-col-mod,
+.roll-history-col-total {
+  flex: 1;
+}
+
+.roll-history-col-mod {
+  text-align: center;
+}
+
+.roll-history-col-total {
+  text-align: right;
+  font-weight: var(--weight-semi);
+}
+
+
+/* ==========================================================================
+   SEO Content Sections
+   ========================================================================== */
+
+.content {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6) var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.content-heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+}
+
+.content-section p {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.content-section a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border-hover);
+  text-underline-offset: 2px;
+  transition: text-decoration-color var(--transition-fast);
+}
+
+.content-section a:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+.content-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-left: var(--space-5);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.content-list strong {
+  color: var(--color-text-primary);
+  font-weight: var(--weight-semi);
+}
+
+
+/* ==========================================================================
+   Content Table (probability tables etc.)
+   ========================================================================== */
+
+.content-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.content-table th {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semi);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.content-table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.content-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.content-table td:first-child {
+  font-weight: var(--weight-semi);
+  color: var(--color-text-primary);
+}
+
+
+/* ==========================================================================
+   Popular Rolls (internal link grid on roll pages)
+   ========================================================================== */
+
+.popular-rolls {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6) var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.popular-rolls-heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.popular-rolls-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.popular-rolls-grid a {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.popular-rolls-grid a:hover {
+  background: var(--color-accent);
+  color: #ffffff;
+}
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  :root {
+    --dice-size: 85px;
+    --dice-dot-size: 14px;
+  }
+
+  .app {
+    padding: var(--space-6) var(--space-4);
+    gap: var(--space-6);
+  }
+
+  .title {
+    font-size: 1.625rem;
+  }
+
+  .controls-card {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    gap: var(--space-3);
+    padding: 0;
+  }
+
+  .control-select {
+    height: 44px;
+    font-size: var(--text-base);
+  }
+
+  .control-divider {
+    display: none;
+  }
+
+  .roll-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .die-number-text {
+    font-size: var(--text-3xl);
+  }
+
+  .content {
+    padding: var(--space-6) var(--space-4) var(--space-12);
+    gap: var(--space-8);
+  }
+
+  .content-heading {
+    font-size: var(--text-xl);
+  }
+
+  .result-value {
+    font-size: var(--text-2xl);
+  }
+
+  .modifier-btn {
+    width: 44px;
+    height: 44px;
+    font-size: var(--text-sm);
+  }
+
+
+  .result-equation {
+    gap: var(--space-1);
+  }
+
+  .result-equation-part {
+    font-size: var(--text-base);
+  }
+
+  .result-equation-total {
+    font-size: var(--text-2xl);
+    min-width: 60px;
+    padding: var(--space-1) var(--space-4);
+  }
+
+  .roll-history-section {
+    padding: var(--space-6) var(--space-4) 0;
+  }
+
+  .roll-history-heading {
+    font-size: var(--text-xl);
+  }
+}
